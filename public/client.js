@@ -13,7 +13,8 @@ let lastSentHtml = "";
 let tipIndex = 0;
 
 function connect(name) {
-  ws = new WebSocket(`ws://${window.location.host}`);
+  const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+  ws = new WebSocket(`${protocol}://${window.location.host}`);
 
   ws.addEventListener("open", () => {
     ws.send(JSON.stringify({ type: "join", name }));
