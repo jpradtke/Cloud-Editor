@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collab Text Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="name-gate" id="nameGate">
+      <div class="name-card">
+        <h1>Join the editor</h1>
+        <p>Enter your name so others can see where you are typing.</p>
+        <input id="nameInput" type="text" placeholder="Your name" maxlength="40" />
+        <button id="joinBtn">Enter</button>
+      </div>
+    </div>
+
+    <header class="toolbar">
+      <div class="toolbar-left">
+        <span class="brand">Realtime Notes</span>
+      </div>
+      <div class="toolbar-right">
+        <button class="tool-btn" data-cmd="bold"><strong>B</strong></button>
+        <button class="tool-btn" data-cmd="italic"><em>I</em></button>
+        <select id="fontSize">
+          <option value="14">14px</option>
+          <option value="16" selected>16px</option>
+          <option value="18">18px</option>
+          <option value="20">20px</option>
+          <option value="24">24px</option>
+          <option value="28">28px</option>
+          <option value="32">32px</option>
+        </select>
+      </div>
+    </header>
+
+    <main class="editor-shell">
+      <div id="editor" class="editor" contenteditable="true" spellcheck="true"></div>
+    </main>
+
+    <aside class="assistant" id="assistant">
+      <div class="assistant-sprite" aria-hidden="true">
+        <div class="assistant-eye left"></div>
+        <div class="assistant-eye right"></div>
+        <div class="assistant-mouth"></div>
+      </div>
+      <div class="assistant-bubble" id="assistantBubble">
+        <span id="assistantText">Tip: Enter your name so teammates can find you.</span>
+      </div>
+    </aside>
+
+    <script src="client.js" type="module"></script>
+  </body>
+</html>
